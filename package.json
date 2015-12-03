@@ -1,0 +1,34 @@
+{
+  "name": "istanbul-no-coverage",
+  "version": "0.0.0",
+  "description": "Demonstrate \"No coverage information was collected\" issue",
+  "main": "src/js/index.js",
+  "scripts": {
+    "start": "http-server . -c-1 -o",
+    "build": "mkdir -p build/js/ && browserify -t babelify src/js/index.js -o build/js/index.js",
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --require test-helper.js --harmony --bail --recursive 'src/js/__tests__/**/*.test.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-es2015": "=6.1.18",
+    "babel-preset-react": "=6.1.18",
+    "babelify": "=7.2.0",
+    "browserify": "=12.0.1",
+    "immutable": "=3.7.5",
+    "react": "=0.14.2",
+    "react-dom": "=0.14.2"
+  },
+  "devDependencies": {
+    "babel-core": "=6.2.1",
+    "chai": "=3.4.1",
+    "chai-immutable": "=1.5.3",
+    "http-server": "=0.8.5",
+    "istanbul": "=0.4.1",
+    "jsdom": "=7.1.0",
+    "mocha": "=2.3.4",
+    "react-addons-test-utils": "=0.14.2",
+    "sinon": "=1.17.2",
+    "sinon-chai": "=2.8.0"
+  }
+}
